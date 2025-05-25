@@ -5,7 +5,7 @@
 # Edit the next two lines if necessary
 
 CC = gcc
-CFLAGS = -O2 -fomit-frame-pointer
+CFLAGS = -ansi -w -O2 -fomit-frame-pointer
 
 MATHFLAGS = -lm
 

@@ -15,6 +15,8 @@ Compile with
 #include <stdlib.h>
 #include <math.h>
 
+#define M_PI 3.1416
+
 #define MAX_SIZE 5001		/* max number of vertices of packing */
 #define ITERATIONS 1000000	/* max passes through the repack routine */
 #define NUM_PETALS 60		/* max number of neighbors of any circle */

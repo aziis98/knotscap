@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//#include <draw.h>
 #include <math.h>
+#include <draw.h>
 
 int nc, nr, infinitereg, ccr[100][50];
 float drawcoords[500][4];
@@ -34,7 +34,6 @@ if (bd < 1000)   /* search for best infinite region, if cramped */
   bestbd = 0;
   count=1;
   for (reg=1; reg<=nr; ++reg) if (ccr[reg][0] >= 5)
-  //for (reg=1; reg<=nr; ++reg) if (ccr[reg][0] == 3 && count++ == 4)
   {
     infinitereg = reg;
     
