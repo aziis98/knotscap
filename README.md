@@ -2,11 +2,127 @@
 
 [![Build](https://github.com/aziis98/knotscap/actions/workflows/build.yml/badge.svg)](https://github.com/aziis98/knotscap/actions/workflows/build.yml)
 
-> **Fork Notes:**
->
-> -   This is still very unstable but somewhat works if we ignore some random
->     error boxes that sometimes pop up when resizing the window.
-> -   Some actions like "Draw Knot" for some reason don't work or hang for now.
+## Fork Notes
+
+-   This is still very unstable but somewhat works if we ignore some random
+    error boxes that sometimes pop up when resizing the window.
+
+-   Some actions like "Draw Knot" for some reason don't work or hang for now.
+
+## Usage
+
+To run Knotscape, you need to have Tcl/Tk installed on your system. Then you can
+build and run it with the following commands:
+
+```bash
+$ https://github.com/aziis98/knotscap
+$ make
+$ ./knotscape
+```
+
+## Project Structure
+
+Knotscape is primarily a Tcl/Tk application that provides a graphical user
+interface for exploring knot theory concepts. Its structure can be understood at
+a high level as follows:
+
+-   **Main Application (`knotscape` script & `tcl/` directory):**
+
+    -   The `knotscape` shell script is the main entry point, which launches the
+        Tcl/Tk-based GUI.
+
+    -   The `tcl/` directory contains numerous Tcl scripts (`.tcl` files). These
+        scripts define the user interface elements, event handling, and the core
+        logic of the application. They are organized into various procedures
+        (Tcl `proc`s) that manage different functionalities like displaying
+        knots, handling user input, and orchestrating calls to backend programs.
+
+-   **Computational Backend (C Programs in `src/`):**
+
+    -   Knotscape offloads computationally intensive tasks to a suite of
+        external programs written in C. The source code for these programs
+        resides in the `src/` directory.
+
+    -   Upon compilation (using the `Makefile`), these C programs are placed as
+        executables in the `bin/` directory.
+
+    -   Examples of such programs include:
+
+        -   `poly1` and `poly2`: Used for computing various knot polynomials.
+
+        -   `draw`: Handles the generation of knot diagrams.
+
+        -   `knotfind`, `locate_a`, `locate_n`: Used for searching and
+            identifying knots in the database.
+
+        -   Other specialized programs for tasks like calculating hyperbolic
+            invariants, checking knot properties, etc.
+
+-   **Data and Resources:**
+
+    -   `knotTable/`: Contains the database of knots.
+
+    -   `doc/`: Provides documentation, including conversion tables for knot
+        notations.
+
+    -   `help/`: Stores help files accessible from the application.
+
+    -   `gif/`: Contains images used in the GUI.
+
+    -   `lib/`: Includes auxiliary data files used by some of the backend
+        programs.
+
+This separation allows the Tcl/Tk frontend to remain responsive while the C
+programs perform complex calculations.
+
+## Help Outline
+
+The `help/` directory contains plain text files that provide guidance on various
+aspects of Knotscape. The [`help/help.toc`](help/help.toc) file serves as a
+table of contents for these help files. Here's a brief overview of the key help
+topics:
+
+-   **[`help.tutorial`](help/help.tutorial)**: A step-by-step guide for new
+    users to learn the basics of Knotscape.
+
+-   **[`help.notation`](help/help.notation)**: Explains the different systems of
+    notation used to describe knots within the program (e.g.,
+    Dowker-Thistlethwaite, Alexander-Briggs).
+
+-   **[`help.enter`](help/help.enter)**: Instructions on how to manually input
+    knots into the application, typically using a specific notation.
+
+-   **[`help.linksmith`](help/help.linksmith)**: Detailed guide on using
+    LinkSmith, the graphical tool for drawing and editing knot and link diagrams
+    with the mouse.
+
+-   **[`help.locate`](help/help.locate)**: How to search for and identify knots
+    within Knotscape's extensive database.
+
+-   **[`help.draw`](help/help.draw)**: Information on generating and customizing
+    visual diagrams of knots.
+
+-   **[`help.hyperbolic`](help/help.hyperbolic)**: Covers the calculation and
+    interpretation of hyperbolic invariants for knots, a key feature for
+    studying knot geometry.
+
+-   **[`help.polynomials`](help/help.polynomials)**: Describes the various knot
+    polynomials (e.g., Alexander, Jones, HOMFLY) that Knotscape can compute and
+    their significance.
+
+-   **[`help.homomorphisms`](help/help.homomorphisms)**: Details on working with
+    representations of knot groups and their homomorphisms.
+
+-   **[`help.shortcuts`](help/help.shortcuts)**: A list of keyboard shortcuts to
+    speed up common operations.
+
+-   **[`help.limits`](help/help.limits)**: Outlines the operational boundaries
+    of the software, such as the maximum number of crossings it can handle.
+
+-   **[`help.editing`](help/help.editing)**: Provides tips and instructions for
+    text editing within Knotscape's various windows and input fields.
+
+---
 
 4-1-99 by Jim Hoste and Morwen Thistlethwaite, with help from Bruce Ewing, Ken
 Millett, Ken Stephenson and Jeff Weeks.
