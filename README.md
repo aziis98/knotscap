@@ -1,5 +1,13 @@
 # Knotscape 1.01
 
+[![Build](https://github.com/aziis98/knotscap/actions/workflows/build.yml/badge.svg)](https://github.com/aziis98/knotscap/actions/workflows/build.yml)
+
+> **Fork Notes:**
+>
+> -   This is still very unstable but somewhat works if we ignore some random
+>     error boxes that sometimes pop up when resizing the window.
+> -   Some actions like "Draw Knot" for some reason don't work or hang for now.
+
 4-1-99 by Jim Hoste and Morwen Thistlethwaite, with help from Bruce Ewing, Ken
 Millett, Ken Stephenson and Jeff Weeks.
 
