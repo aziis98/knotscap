@@ -2,7 +2,7 @@
 
 [![Build](https://github.com/aziis98/knotscap/actions/workflows/build.yml/badge.svg)](https://github.com/aziis98/knotscap/actions/workflows/build.yml)
 
-## Fork Notes
+**Fork Notes:**
 
 -   This is still very unstable but somewhat works if we ignore some random
     error boxes that sometimes pop up when resizing the window.
